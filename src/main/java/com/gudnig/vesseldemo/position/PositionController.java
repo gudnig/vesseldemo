@@ -1,7 +1,10 @@
 package com.gudnig.vesseldemo.position;
 
+import javax.validation.ValidationException;
+
 import com.gudnig.vesseldemo.infrastructure.DomainException;
 import com.gudnig.vesseldemo.infrastructure.RequestHandler;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +26,9 @@ public class PositionController {
             var result = formattingHandler.handle(request);
             return ResponseEntity.ok(result);
         } 
+        catch (ValidationException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
         catch (DomainException e) {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(e.getMessage());
         }        
