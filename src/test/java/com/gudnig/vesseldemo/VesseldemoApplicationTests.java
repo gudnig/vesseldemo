@@ -26,6 +26,7 @@ class VesseldemoApplicationTests {
 		request.vessel.country = "IS";
 
 		var result = handler.handle(request);
+		
 		assertThat(result.position.latitude).as("Latitude conversion should be close").isCloseTo(0.77496793616, Assertions.offset(0.0001));
 		assertThat(result.position.longitude).as("Longitude conversion should be close").isCloseTo(-0.84004457935, Assertions.offset(0.0001));
 		assertThat(result.position.speed).as("Speed conversion should be close").isCloseTo(9.517222, Assertions.offset(0.0001));
