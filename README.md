@@ -8,4 +8,4 @@
 
 ## View the demo here
 
-vesseldemo.eba-cs2aidvg.eu-west-1.elasticbeanstalk.com/swagger-ui.html
+http://vesseldemo.eba-cs2aidvg.eu-west-1.elasticbeanstalk.com/swagger-ui.html
