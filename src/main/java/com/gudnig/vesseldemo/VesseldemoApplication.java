@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 @SpringBootApplication
 public class VesseldemoApplication {
+	// This serves as the composition root. Normally I would try to autowire the decorators
 	@Bean
     RequestHandler<PositionFormatRequest, FormattedPosition> decoratedFormattedPositionHandler() {
 		var service = new PositionFormattingService();
